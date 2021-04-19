@@ -19,7 +19,6 @@ React<br />
 Fetch API<br />
 HTML5/CSS3<br />
 JavaScript<br />
-BEM methodology<br />
 
 # Installing
 - Fork and clone this repository
