@@ -12,7 +12,7 @@ Part 2 covers:
 - Working with styling.
 
 # Links
-DEMO LINK
+[DEMO LINK](https://annaharshyna.github.io/test-task/)
 
 # Technologies
 React<br />
