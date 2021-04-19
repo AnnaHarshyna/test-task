@@ -21,7 +21,7 @@ HTML5/CSS3<br />
 JavaScript<br />
 BEM methodology<br />
 
-# How to run project locally
-`npm i`<br />
-`npm start`<br />
-open your browser at `http://localhost:3000`
+# Installing
+- Fork and clone this repository
+- Run `npm install` in your terminal
+- Run `npm start`
