@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dialog,
   DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, Typography } from '@material-ui/core';
@@ -87,14 +88,6 @@ export const PostsList = () => {
                       fullWidth
                       multiline
                     />
-                    <TextField
-                      margin="dense"
-                      id="description"
-                      label="Image Url"
-                      type="text"
-                      fullWidth
-                    />
-
                   </DialogContent>
                   <DialogActions>
                     <Button
@@ -180,3 +173,12 @@ export const PostsList = () => {
     </main>
   );
 }
+
+PostsList.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
