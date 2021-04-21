@@ -6,10 +6,11 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dial
 
 import { useStyles } from './styles';
 
-//const postsList = [1,2,3,4,5,6,7,8,9];
 
 export const PostsList = ({ postsList }) => {
   const classes = useStyles();
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
   const [posts, setPosts] = useState(postsList);
   const [addOpen, setAddOpen] = useState(false);
   const [removeOpen, setRemoveOpen] = useState(false);
@@ -28,10 +29,22 @@ export const PostsList = ({ postsList }) => {
     setRemoveOpen(false);
   }, [posts]);
 
-  const handleSave = useCallback((newPost) => {
+  const handleSave = useCallback((event) => {
+    event.preventDefault();
+    const newPost = {
+      title,
+      body,
+    };
+
+    if (title === '' && body === '') {
+      return;
+    }
     const newPostsList = [...posts, newPost];
     setPosts(newPostsList);
+
     setAddOpen(false);
+    setTitle('');
+    setBody('');
   }, [posts]);
 
   const handleRemoveOpen = (event) => {
@@ -73,18 +86,28 @@ export const PostsList = ({ postsList }) => {
                   <DialogTitle id="add-dialog-title">Add post</DialogTitle>
                   <DialogContent>
                     <TextField
+                      required
                       autoFocus
                       margin="dense"
                       id="name"
                       label="Title"
                       type="text"
+                      value={title}
+                      onChange={(event) => {
+                        setTitle(event.target.value);
+                      }}
                       fullWidth
                     />
                     <TextField
+                      required
                       margin="dense"
                       id="description"
                       label="Body"
                       type="text"
+                      value={body}
+                      onChange={(event) => {
+                        setBody(event.target.value);
+                      }}
                       fullWidth
                       multiline
                     />
