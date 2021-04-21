@@ -19,7 +19,7 @@ const App = () => {
     posts.length > 0
     ? (
       <>
-        <PostsList />
+        <PostsList postsList={posts}/>
         <ImageCarousel slides={CarouselData} />
       </>
     )

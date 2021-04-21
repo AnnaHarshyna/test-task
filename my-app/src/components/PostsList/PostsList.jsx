@@ -6,9 +6,9 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Dial
 
 import { useStyles } from './styles';
 
-const postsList = [1,2,3,4,5,6,7,8,9];
+//const postsList = [1,2,3,4,5,6,7,8,9];
 
-export const PostsList = () => {
+export const PostsList = ({ postsList }) => {
   const classes = useStyles();
   const [posts, setPosts] = useState(postsList);
   const [addOpen, setAddOpen] = useState(false);
@@ -114,8 +114,8 @@ export const PostsList = () => {
 
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
-          {posts.map((product) => (
-            <Grid item key={product} xs={12} sm={6} md={4}>
+          {posts.map((post) => (
+            <Grid item key={post} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
@@ -123,11 +123,11 @@ export const PostsList = () => {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography variant="h5" gutterBottom>
-                    Post title
+                  <Typography variant="h6" gutterBottom color="primary">
+                    {post.title}
                   </Typography>
                   <Typography>
-                    Post body
+                    {post.body}
                   </Typography>
                 </CardContent>
                 <CardActions>
@@ -151,7 +151,7 @@ export const PostsList = () => {
                       <Button
                         size="small"
                         color="secondary"
-                        onClick={() => handleRemove(product)}
+                        onClick={() => handleRemove(post)}
                       >
                         Remove
                       </Button>
