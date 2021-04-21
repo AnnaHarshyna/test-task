@@ -29,14 +29,15 @@ export const PostsList = ({ postsList }) => {
     setRemoveOpen(false);
   }, [posts]);
 
-  const handleSave = useCallback((event) => {
+  const handleSave = (event) => {
     event.preventDefault();
+
     const newPost = {
       title,
       body,
     };
 
-    if (title === '' && body === '') {
+    if (title === '' || body === '') {
       return;
     }
     const newPostsList = [...posts, newPost];
@@ -45,7 +46,7 @@ export const PostsList = ({ postsList }) => {
     setAddOpen(false);
     setTitle('');
     setBody('');
-  }, [posts]);
+  };
 
   const handleRemoveOpen = (event) => {
     console.log(event);
