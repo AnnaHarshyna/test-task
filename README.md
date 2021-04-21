@@ -12,14 +12,13 @@ Part 2 covers:
 - Working with styling.
 
 # Links
-DEMO LINK
+[DEMO LINK](https://annaharshyna.github.io/test-task/)
 
 # Technologies
 React<br />
 Fetch API<br />
 HTML5/CSS3<br />
 JavaScript<br />
-BEM methodology<br />
 
 # Installing
 - Fork and clone this repository
