@@ -22,9 +22,15 @@ export const PostsList = () => {
   }
 
   const handleRemove = useCallback((id) => {
-    const newPostsList = posts.filter(product => product !== id);
+    const newPostsList = posts.filter(post => post !== id);
     setPosts(newPostsList);
     setRemoveOpen(false);
+  }, [posts]);
+
+  const handleSave = useCallback((newPost) => {
+    const newPostsList = [...posts, newPost];
+    setPosts(newPostsList);
+    setAddOpen(false);
   }, [posts]);
 
   const handleRemoveOpen = (event) => {
@@ -93,8 +99,8 @@ export const PostsList = () => {
                   <DialogActions>
                     <Button
                       size="small"
+                      onClick={handleSave}
                       color="primary"
-                      // onClick={}
                     >
                       Save
                     </Button>
