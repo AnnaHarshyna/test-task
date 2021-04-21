@@ -20,7 +20,7 @@ const ImageCarousel = ({ slides }) => {
 
   return (
     <>
-    <h1 class="title">Types of sports:</h1>
+    <h1 class="title">Types of sports (in carousel):</h1>
     <section className='slider'>
       <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
       <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />

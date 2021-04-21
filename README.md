@@ -4,7 +4,7 @@ This is React application that constists of 2 parts.<br />
 Part 1 covers:
 - Creating/Reading/Updating/Deleting entities with REST APIs and change UI accordingly.
 - Working with forms.
-- Using UI component libraries.
+- Using Maretial UI (UI component library).
 <br />
 
 Part 2 covers:
